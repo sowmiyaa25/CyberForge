@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CYBERFORGE: HACK &amp; SECURE | Workshop Certificate | KAIRVOX TECHNOLOGIES</title>
+  <meta name="description" content="Verify your participation in the CYBERFORGE: HACK &amp; SECURE Cyber Security Workshop by KAIRVOX TECHNOLOGIES and download your certificate as a PDF.">
+  <meta name="theme-color" content="#071029">
+
+  <!-- Inline SVG favicon so there is never a broken icon request -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23071029'/%3E%3Cpath d='M16 5l9 3.5v6.8c0 5.4-3.7 9.3-9 11.7-5.3-2.4-9-6.3-9-11.7V8.5L16 5z' fill='none' stroke='%233d9bff' stroke-width='2'/%3E%3Cpath d='M12 16l3 3 5-6' fill='none' stroke='%2335d0ff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+
+  <!-- Fonts: Inter (interface + certificate ID) and Mr Dafoe (cursive participant name on the certificate) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Mr+Dafoe&amp;display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Libraries (CDN). "defer" keeps their order: Papa Parse, jsPDF, then script.js -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#verify">Skip to certificate search</a>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="#home" aria-label="KAIRVOX TECHNOLOGIES – CYBERFORGE: HACK &amp; SECURE, home">
+        <svg class="brand-mark" viewBox="0 0 40 40" width="40" height="40" aria-hidden="true" focusable="false">
+          <defs>
+            <linearGradient id="gMark" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#35d0ff"/>
+              <stop offset="1" stop-color="#2b5fff"/>
+            </linearGradient>
+          </defs>
+          <rect x="1" y="1" width="38" height="38" rx="9" fill="#0b1a3d" stroke="url(#gMark)" stroke-width="1.5"/>
+          <path d="M14 10v20M14 20l10-10M14 20l10 10" fill="none" stroke="url(#gMark)" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="brand-text">
+          <span class="brand-company">KAIRVOX TECHNOLOGIES</span>
+          <span class="brand-event"><strong>CYBERFORGE</strong> <span>HACK &amp; SECURE</span></span>
+          <span class="brand-sub">Cyber Security Workshop</span>
+        </span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primaryNav">
+        <span class="visually-hidden">Menu</span>
+        <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false">
+          <path class="bars" d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+
+      <nav class="primary-nav" id="primaryNav" aria-label="Primary">
+        <ul>
+          <li><a href="#home" data-spy="home">Home</a></li>
+          <li><a href="#verify" data-spy="verify">Verify Certificate</a></li>
+          <li><a href="#about" data-spy="about">About Workshop</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" id="home" aria-labelledby="hero-heading">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>CYBERFORGE: HACK &amp; SECURE · Cyber Security Workshop</p>
+          <h1 id="hero-heading">Your Achievement.<br><span class="accent-text">Your Certificate.</span></h1>
+          <p class="hero-lead">Verify your participation in the CYBERFORGE: HACK &amp; SECURE Cyber Security Workshop and download your official certificate.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary btn-lg" href="#verify" id="findCertificateBtn">
+              Find My Certificate
+              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M12 5v14M6 13l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a class="link-quiet" href="#about">About the workshop</a>
+          </div>
+        </div>
+
+        <!-- Digital-verification accent: shield + check with circuit traces -->
+        <div class="hero-visual" aria-hidden="true">
+          <svg viewBox="0 0 420 420" role="presentation" focusable="false">
+            <defs>
+              <linearGradient id="gShield" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#35d0ff"/>
+                <stop offset="1" stop-color="#2b5fff"/>
+              </linearGradient>
+              <radialGradient id="gGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0" stop-color="#2b7fff" stop-opacity=".35"/>
+                <stop offset="1" stop-color="#2b7fff" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+            <circle cx="210" cy="210" r="200" fill="url(#gGlow)"/>
+            <circle cx="210" cy="210" r="168" fill="none" stroke="#2b7fff" stroke-opacity=".25" stroke-dasharray="2 8"/>
+            <circle cx="210" cy="210" r="128" fill="none" stroke="#35d0ff" stroke-opacity=".22"/>
+            <!-- circuit traces -->
+            <g fill="none" stroke="#3d9bff" stroke-opacity=".55" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M30 120h70l24 24h36"/>
+              <path d="M30 300h60l30-30h38"/>
+              <path d="M390 130h-64l-26 26h-30"/>
+              <path d="M390 290h-58l-28-28h-36"/>
+              <path d="M210 14v52M210 406v-52"/>
+            </g>
+            <g fill="#0b1a3d" stroke="#35d0ff" stroke-width="1.5">
+              <circle cx="30" cy="120" r="5"/><circle cx="30" cy="300" r="5"/>
+              <circle cx="390" cy="130" r="5"/><circle cx="390" cy="290" r="5"/>
+              <circle cx="210" cy="14" r="5"/><circle cx="210" cy="406" r="5"/>
+            </g>
+            <!-- shield -->
+            <path d="M210 92l86 33v70c0 58-37 99-86 125-49-26-86-67-86-125v-70l86-33z" fill="#0b1a3d" fill-opacity=".85" stroke="url(#gShield)" stroke-width="4"/>
+            <path d="M210 112l68 26v57c0 46-29 79-68 100-39-21-68-54-68-100v-57l68-26z" fill="none" stroke="#3d9bff" stroke-opacity=".35" stroke-width="1.5"/>
+            <path d="M174 206l26 26 48-56" fill="none" stroke="url(#gShield)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== VERIFY ===================== -->
+    <section class="verify" id="verify" aria-labelledby="verify-heading">
+      <div class="container">
+        <div class="verify-card">
+          <div class="verify-head">
+            <span class="icon-badge" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="24" height="24" focusable="false"><path d="M12 3l7 2.8v5.4c0 4.3-2.9 7.4-7 9.3-4.1-1.9-7-5-7-9.3V5.8L12 3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 12l2.2 2.2L15.5 10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <h2 id="verify-heading">Find Your Workshop Certificate</h2>
+            <p class="section-lead">Enter your registered name and certificate ID to retrieve your certificate.</p>
+          </div>
+
+          <!-- Participant records status (CSV loading state) -->
+          <p class="records-status" id="recordsStatus" role="status" aria-live="polite" data-state="loading">
+            <span class="spinner spinner-sm" aria-hidden="true"></span>
+            <span class="records-status-text">Loading participant records…</span>
+            <button class="btn-text" type="button" id="retryLoadBtn" hidden>Try again</button>
+          </p>
+
+          <form id="verifyForm" novalidate>
+            <div class="field">
+              <label for="participantName">Participant Full Name</label>
+              <div class="input-wrap">
+                <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><circle cx="12" cy="8" r="3.6" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M5 20c.8-3.6 3.6-5.6 7-5.6s6.2 2 7 5.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                <input type="text" id="participantName" name="participantName" placeholder="Enter your full registered name" autocomplete="name" required aria-required="true" aria-describedby="formAlert">
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="certificateId">Certificate ID</label>
+              <div class="input-wrap">
+                <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><rect x="3.5" y="6" width="17" height="12" rx="2.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M7.5 10.5h5M7.5 13.5h3M15.5 10.5h1.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                <input type="text" id="certificateId" name="certificateId" placeholder="e.g., KTX-CF-2026-0001" autocomplete="off" autocapitalize="characters" spellcheck="false" required aria-required="true" aria-describedby="formAlert">
+              </div>
+            </div>
+
+            <div class="alert" id="formAlert" role="alert" hidden></div>
+
+            <button class="btn btn-primary btn-block" type="submit" id="verifyButton">
+              <span class="spinner" aria-hidden="true" hidden></span>
+              <span class="btn-label">Verify &amp; Fetch Certificate</span>
+            </button>
+          </form>
+        </div>
+
+        <!-- ===================== CERTIFICATE PREVIEW ===================== -->
+        <div class="preview" id="previewSection" hidden>
+          <div class="preview-card">
+            <div class="alert alert--success" id="previewAlert" role="status" hidden></div>
+            <h3 class="preview-title" id="previewHeading" tabindex="-1">Your certificate</h3>
+
+            <div class="certificate-frame">
+              <canvas id="certificateCanvas" aria-label="Certificate of Participation preview" role="img"></canvas>
+            </div>
+
+            <div class="preview-actions">
+              <button class="btn btn-primary btn-lg" type="button" id="downloadButton">
+                <span class="spinner" aria-hidden="true" hidden></span>
+                <svg class="btn-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M12 4v11M7 11l5 5 5-5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span class="btn-label">Download Certificate as PDF</span>
+              </button>
+              <div class="alert" id="downloadAlert" role="status" hidden></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== ABOUT ===================== -->
+    <section class="about" id="about" aria-labelledby="about-heading">
+      <div class="container about-inner">
+        <div class="about-copy">
+          <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>The workshop</p>
+          <h2 id="about-heading">About CYBERFORGE: HACK &amp; SECURE</h2>
+          <p>A cybersecurity workshop conducted by KAIRVOX TECHNOLOGIES, introducing participants to cybersecurity basics, ethical hacking fundamentals, hardware hacking concepts, safe practical exercises, and a beginner CTF-style challenge.</p>
+        </div>
+
+        <dl class="details">
+          <div class="detail">
+            <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15" rx="2.4" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M3.5 10h17M8 3.5v3M16 3.5v3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+            <div><dt>Date</dt><dd>17 October 2026</dd></div>
+          </div>
+          <div class="detail">
+            <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 7.5V12l3 2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div><dt>Time</dt><dd>7:00 PM – 9:00 PM</dd></div>
+          </div>
+          <div class="detail">
+            <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true" focusable="false"><rect x="3" y="4.5" width="18" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M9 20h6M12 16.5V20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+            <div><dt>Mode</dt><dd>Online (Google Meet)</dd></div>
+          </div>
+          <div class="detail">
+            <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M3.5 12h17M12 3.5c2.4 2.4 3.6 5.2 3.6 8.5s-1.2 6.1-3.6 8.5c-2.4-2.4-3.6-5.2-3.6-8.5S9.6 5.9 12 3.5z" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
+            <div><dt>Language</dt><dd>Tamil + English</dd></div>
+          </div>
+        </dl>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <p class="footer-brand">KAIRVOX TECHNOLOGIES</p>
+        <p class="footer-event">CYBERFORGE: HACK &amp; SECURE</p>
+      </div>
+      <p class="footer-tagline">Learn. Hack. Secure.</p>
+    </div>
+    <div class="container footer-legal">
+      <p>&copy; 2026 KAIRVOX TECHNOLOGIES. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
